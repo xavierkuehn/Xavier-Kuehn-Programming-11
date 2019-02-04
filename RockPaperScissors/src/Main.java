@@ -17,20 +17,16 @@ public class Main {
         //creates a random integer: 0, 1 or 2, then adds 1 to that number. compInt can equal 1, 2 or 3.
         int compInt = random.nextInt(3) + 1;
 
-        //sets the compChoice and choice variable as an empty string
+        //sets the compChoice variable as an empty string
         String compChoice = "";
-        String choice = "";
 
         //set compChoice variable to rock, paper or scissors, depending on the value of compInt(1,2,3)
         if(compInt == 1){
             compChoice = "r";
-            choice = "rock";
         } else if (compInt == 2){
             compChoice = "s";
-            choice = "scissors";
         } else if (compInt == 3){
             compChoice = "p";
-            choice = "paper";
         }
 
         //check to compare playerChoice to compChoice and decide winner
