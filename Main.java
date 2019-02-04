@@ -1,60 +1,80 @@
+import java.util.Scanner;
+import java.util.Random;
+
 public class Main {
-    public static void main(String args[]){
-        /*For the following expressions write out using code step by step how the
-        compiler will evaluate it
-        Example:
-        System.out.println(2 * 5 + 3);
-        System.out.println(10 + 3);
-        System.out.println(13);
-        Only complete one computation per line of code
-        The output for every line is always equal to the same number
-        In example above the out put should be
-        13
-        13
-        13
-        */
+    public static void main(String[] args){
 
-        //Expression 1
+        //initializes scanner which will receive input from the user
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
 
-        System.out.println((9 - 4)+ 10/2 - (4 - 8)/3);
-        System.out.println(5 + 10/2 - (4 - 8)/3);
-        System.out.println(5 + 10/2 - (-4 / 3));
-        System.out.println(5 + 5 - (-4 / 3));
-        System.out.println(11.3333333333);//exact answer
+        //explains to user instructions on how to play
+        System.out.println("Choose rock, paper or scissors. 'r' for rock, 'p' for paper and 's' for scissors.");
 
-        //Expression 2
-        System.out.println(23%4 + (18 - 3 / 2));
-        System.out.println(23%4 + (18 - 1.5));
-        System.out.println(23%4 + (16.5));
-        System.out.println(3 + (16.5));
-        System.out.println(19.5);//exact answer
+        //sets the 'playerChoice' variable to the users next input
+        String playerChoice = scanner.next().toLowerCase();
 
-        //Expression 3
-        System.out.println(((8 - 5) + Math.pow(3,4)/5));
-        System.out.println((3 + Math.pow(3,4)/5));
-        System.out.println((3 + (81 / 5)));
-        System.out.println((3 + 16.2));
-        System.out.println((19.2));//exact answer
+        //creates a random integer: 0, 1 or 2, then adds 1 to that number. compInt can equal 1, 2 or 3.
+        int compInt = random.nextInt(3) + 1;
 
-        //Expression 4
-        System.out.println((9 % 4) - 8 + Math.pow(2,3) / 8 + (Math.sqrt(81) / 3));
-        System.out.println(1 - 8 + Math.pow(2,3) / 8 + (Math.sqrt(81) / 3));
-        System.out.println(1 - 8 + (8 / 8) + (Math.sqrt(81) / 3));
-        System.out.println(1 - 8 + (8 / 8) + (9 / 3));
-        System.out.println(1 - 8 + (1) + (9 / 3));
-        System.out.println(1 - 8 + (1) + (3));
-        System.out.println(-7 + (1) + (3));
-        System.out.println(-6 + (3));
-        System.out.println(-3.0);//exact answer
+        //sets the compChoice and choice variable as an empty string
+        String compChoice = "";
+        String choice = "";
 
-        //Expression 5
-        System.out.println(((14 / 2 + 3) * Math.sin(45) + 2) - Math.pow(Math.sqrt(25), 3));
-        System.out.println(((7 + 3) * Math.sin(45) + 2) - Math.pow(Math.sqrt(25), 3));
-        System.out.println(((10) * Math.sin(45) + 2) - Math.pow(Math.sqrt(25), 3));
-        System.out.println(((8.49096475465882) + 2) - Math.pow(Math.sqrt(25), 3));
-        System.out.println(((8.49096475465882) + 2) - 125);
-        System.out.println((10.49096475465882 - 125));
-        System.out.println((10.49096475465882 - 125));
-        System.out.println(-114.49096475465882);//exact answer
+        //set compChoice variable to rock, paper or scissors, depending on the value of compInt(1,2,3)
+        if(compInt == 1){
+            compChoice = "r";
+            choice = "rock";
+        } else if (compInt == 2){
+            compChoice = "s";
+            choice = "scissors";
+        } else if (compInt == 3){
+            compChoice = "p";
+            choice = "paper";
+        }
+
+        //check to compare playerChoice to compChoice and decide winner
+        if (compChoice.equals("p")){ // if computer chooses paper
+            if (playerChoice.equals("p")) { //if player chooses paper
+                System.out.println("Draw!");
+                System.out.println("Computer chose paper, you chose paper.");
+            } else if (playerChoice.equals("r")){ //if player chooses rock
+                System.out.println("You lose!");
+                System.out.println("Computer chose paper, you chose rock.");
+            } else if (playerChoice.equals("s")){ //if player chooses scissors
+                System.out.println("You win!");
+                System.out.println("Computer chose paper, you chose scissors.");
+            } else {
+                System.out.println("Invalid user input, please play again."); //if user input is invalid, game will end
+            }
+
+        } else if (compChoice.equals("r")){ //if computer chooses rock
+            if (playerChoice.equals("p")){ //if player chooses paper
+                System.out.println("You win!");
+                System.out.println("Computer chose rock, you chose paper.");
+            } else if (playerChoice.equals("r")){ //if player chooses rock
+                System.out.println("Draw!");
+                System.out.println("Computer chose rock, you chose rock.");
+            } else if (playerChoice.equals("s")){ //if player chooses scissors
+                System.out.println("You lose!");
+                System.out.println("Computer chose rock, you chose scissors.");
+            } else {
+                System.out.println("Invalid user input, please play again."); //if user input is invalid, game will end
+            }
+
+        } else if (compChoice.equals("s")){ //if computer chooses scissors
+            if (playerChoice.equals("s")){ //if player chooses scissors
+                System.out.println("Draw!");
+                System.out.println("Computer chose scissors, you chose scissors.");
+            } else if (playerChoice.equals("p")){ //if player chooses paper
+                System.out.println("You lose!");
+                System.out.println("Computer chose scissors, you chose paper.");
+            } else if (playerChoice.equals("r")){ //if player chooses rock
+                System.out.println("You win!");
+                System.out.println("Computer chose scissors, you chose rock.");
+            } else {
+                System.out.println("Invalid user input, please play again."); //if user input is invalid, game will end
+            }
+        }
     }
 }
