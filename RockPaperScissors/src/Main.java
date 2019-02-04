@@ -37,43 +37,43 @@ public class Main {
         if (compChoice.equals("p")){ // if computer chooses paper
             if (playerChoice.equals("p")) { //if player chooses paper
                 System.out.println("Draw!");
-                System.out.println("Computer chose paper, you chose paper.");
+                System.out.println("Computer choice: paper   Player choice: paper");
             } else if (playerChoice.equals("r")){ //if player chooses rock
                 System.out.println("You lose!");
-                System.out.println("Computer chose paper, you chose rock.");
+                System.out.println("Computer choice: paper   Player choice: rock");
             } else if (playerChoice.equals("s")){ //if player chooses scissors
                 System.out.println("You win!");
-                System.out.println("Computer chose paper, you chose scissors.");
+                System.out.println("Computer choice: paper   Player choice: scissors");
             } else {
-                System.out.println("Invalid user input, please play again."); //if user input is invalid, game will end
+                System.out.println("Invalid selection please play again."); //if user input is invalid, the game will end
             }
 
         } else if (compChoice.equals("r")){ //if computer chooses rock
             if (playerChoice.equals("p")){ //if player chooses paper
                 System.out.println("You win!");
-                System.out.println("Computer chose rock, you chose paper.");
+                System.out.println("Computer choice: rock   Player choice: paper");
             } else if (playerChoice.equals("r")){ //if player chooses rock
                 System.out.println("Draw!");
-                System.out.println("Computer chose rock, you chose rock.");
+                System.out.println("Computer choice: rock   Player choice: rock");
             } else if (playerChoice.equals("s")){ //if player chooses scissors
                 System.out.println("You lose!");
-                System.out.println("Computer chose rock, you chose scissors.");
+                System.out.println("Computer choice: rock   Player choice: scissors");
             } else {
-                System.out.println("Invalid user input, please play again."); //if user input is invalid, game will end
+                System.out.println("Invalid selection please play again."); //if user input is invalid, the game will end
             }
 
         } else if (compChoice.equals("s")){ //if computer chooses scissors
             if (playerChoice.equals("s")){ //if player chooses scissors
                 System.out.println("Draw!");
-                System.out.println("Computer chose scissors, you chose scissors.");
+                System.out.println("Computer choice: scissors   Player choice: scissors");
             } else if (playerChoice.equals("p")){ //if player chooses paper
                 System.out.println("You lose!");
-                System.out.println("Computer chose scissors, you chose paper.");
+                System.out.println("Computer choice: scissors   Player choice: paper");
             } else if (playerChoice.equals("r")){ //if player chooses rock
                 System.out.println("You win!");
-                System.out.println("Computer chose scissors, you chose rock.");
+                System.out.println("Computer choice: scissors   Player choice: rock");
             } else {
-                System.out.println("Invalid user input, please play again."); //if user input is invalid, game will end
+                System.out.println("Invalid selection please play again."); //if user input is invalid, the game will end
             }
         }
     }
